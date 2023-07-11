@@ -1,7 +1,7 @@
 <!-- footer -->
 <!-- ============================================================== -->
 <footer class="footer text-center">
-    All Rights Reserved by Flexy Admin. Designed and Developed by <a href="https://www.wrappixel.com">WrapPixel</a>.
+    Copyright &copy; ASKI Micro Insurance Powered by WrapPixel. Crafted with <span class="text-danger"><i class="mdi mdi-heart"></i></span> by <a href="https://isynergiesinc.com/">iSynergies</a>
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->

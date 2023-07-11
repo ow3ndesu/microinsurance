@@ -8,7 +8,7 @@
 <meta name="description"
     content="Flexy Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
 <meta name="robots" content="noindex,nofollow">
-<title>Flexy Admin Lite Template by WrapPixel</title>
+<title>Microinsurance Admin</title>
 <link rel="canonical" href="https://www.wrappixel.com/templates/Flexy-admin-lite/" />
 
 <!-- Favicon icon -->
@@ -21,6 +21,10 @@
 <!-- Custom CSS -->
 <link href="../assets/css/style.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../assets/libs/sweetalert2/sweetalert2.min.css" />
+
+<!-- Icons -->
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

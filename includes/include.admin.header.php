@@ -1,3 +1,9 @@
+<?php 
+	$actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; 
+	$obj = explode('/', $_SERVER['REQUEST_URI']);
+	$end = end($obj);
+?>
+
 <!-- ============================================================== -->
 <!-- Topbar header - style you can find in pages.scss -->
 <!-- ============================================================== -->
@@ -51,6 +57,34 @@
             <!-- ============================================================== -->
             <!-- Right side toggle and nav items -->
             <!-- ============================================================== -->
+            <?php if ($end == 'contents') { ?>
+                <ul class="navbar-nav float-end">
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="#navigation">
+                                    Navigation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="#home">
+                                    Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="#products">
+                                    Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="#testimonials">
+                                    Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="#about">
+                                    About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="#contact">
+                                    Contact</a>
+                    </li>
+                </ul>
+            <?php }?>
             <ul class="navbar-nav float-end">
                 <!-- ============================================================== -->
                 <!-- User profile and search -->
@@ -60,12 +94,8 @@
                         <img src="../assets/images/users/profile.png" alt="user" class="rounded-circle" width="31">
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i>
+                        <a class="dropdown-item" href="profile"><i class="ti-user m-r-5 m-l-5"></i>
                             My Profile</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i>
-                            My Balance</a>
-                        <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i>
-                            Inbox</a>
                         <a class="dropdown-item" href="javascript:void(0)" onclick="logOut();"><i class="ti-arrow-left m-r-5 m-l-5"></i>
                             Logout</a>
                     </ul>

@@ -11,6 +11,9 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
 
 <head>
     <?php include_once("../../includes/include.admin.head.php"); ?>
+    
+    <!-- Product CSS -->
+    <link href="../assets/css/products.css" rel="stylesheet">
     <style>
         .modal-body#livepreviewmodalbody::-webkit-scrollbar {
             display: none !important;
@@ -91,310 +94,20 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                         </div>
                     </div>
                 </div>
-                <div class="row" id="navigation">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title"><i class="mdi mdi-view-dashboard"></i> Navigation Bar</div>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Navigation Bar Title
-                                            </div>
-                                            <div class="card-body d-flex justify-content-between align-items-center">
-                                                ASKI MI
-                                                <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="row">
-                                            <div class="col-md">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        All Products in Navigation Bar
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <label class="badge bg-success">Showing</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        All Products in Featured
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <label class="badge bg-danger">Not showing</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="home">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title"><i class="mdi mdi-home"></i> Home</div>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Banner Text Title
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md d-flex justify-content-between align-items-center">
-                                                        Welcome to ASKI Micro Insurance
-                                                        <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md d-flex justify-content-between align-items-center">
-                                                        Highlighted Text
-                                                        <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Banner Text Contents
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md">
-                                                        At ASKI MI, we offer a comprehensive selection of insurance products designed to provide you with the security you need. Explore our diverse range of offerings and select the perfect insurance solution that suits your requirements. We sincerely look forward to having you join our valued clientele!
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md d-flex justify-content-between align-items-center">
-                                                        Two (2) Highlighted Texts
-                                                        <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Banner Button
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md">
-                                                        KNOW US BETTER
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md d-flex justify-content-between align-items-center">
-                                                        #about
-                                                        <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Banner Image
-                                            </div>
-                                            <div class="card-body">
-                                                <img src="../../assets/images/banner-bg.png" alt="Banner Image" width="100%" height="100%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="products">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title"><i class="mdi mdi-server-security"></i> Products</div>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Featured Products Subtitle
-                                            </div>
-                                            <div class="card-body d-flex justify-content-between align-items-center">
-                                                Look for what is ideal to you here!
-                                                <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                All Products
-                                            </div>
-                                            <div class="card-body d-flex justify-content-between align-items-center">
-                                                Product and Product Details
-                                                <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="testimonials">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title"><i class="mdi mdi-comment-multiple-outline"></i> Testimonials</div>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Testimonials Subtitle
-                                            </div>
-                                            <div class="card-body d-flex justify-content-between align-items-center">
-                                                We are delighted to share that our clients have expressed utmost satisfaction with our services. Now, we eagerly await the opportunity to welcome you into our fold!
-                                                <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Testimonials
-                                            </div>
-                                            <div class="card-body d-flex justify-content-between align-items-center">
-                                                Four (4) Client Testimonials
-                                                <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="about">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title"><i class="mdi mdi-account-card-details"></i> About Us</div>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                About Us Subtitle
-                                            </div>
-                                            <div class="card-body d-flex justify-content-between align-items-center">
-                                                What does ASKI Micro Insurance really do?
-                                                <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="row">
-                                            <div class="col-md">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        About Us
-                                                    </div>
-                                                    <div class="card-body d-flex justify-content-between align-items-center">
-                                                        Three (3) Characteristics
-                                                        <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md">
-                                                <div class="card">
-                                                    <div class="card-header">
-                                                        About Us Left Image
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <img src="../../assets/images/left-image.png" alt="About Us Left Image" width="100%" height="100%">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row" id="contact">
-                    <div class="col-md">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title"><i class="mdi mdi-email-alert"></i> Contact Us</div>
-                                <div class="row">
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Contact Us Title
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md">
-                                                        More About ASKI MI
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md d-flex justify-content-between align-items-center">
-                                                        Highlighted Text
-                                                        <button type="button" class="btn btn-secondary m-1" title="Edit"><i class="mdi mdi-pen"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Contact Us Text Contents
-                                            </div>
-                                            <div class="card-body">
-                                                Thank you for your interest in our company! We value your feedback, inquiries, and suggestions. If you have any questions regarding our products, services, or any general inquiries, our dedicated customer support team is here to assist you. Feel free to reach out to us through the contact form below, and we'll make sure to respond promptly to provide the information you need.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                E-Mail Card
-                                            </div>
-                                            <div class="card-body">
-                                                <label class="badge bg-success">Showing</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md">
-                                        <div class="card">
-                                            <div class="card-header">
-                                                Footer Image
-                                            </div>
-                                            <div class="card-body">
-                                                <img src="../../assets/images/footer-bg.png" alt="Footer Image" width="100%" height="100%">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Modal -->
+                <?php include_once("content.navigation.php"); ?>
+
+                <?php include_once("content.home.php"); ?>
+
+                <?php include_once("content.products.php"); ?>
+
+                <?php include_once("content.testimonials.php"); ?>
+
+                <?php include_once("content.about.php"); ?>
+
+                <?php include_once("content.contact.php"); ?>
+
+                <!-- Live Preview Modal -->
                 <div class="modal fade" id="livepreviewmodal" tabindex="-1" role="dialog" aria-labelledby="livepreviewmodaltitle" aria-hidden="true">
                     <div class="modal-dialog modal-fullscreen modal-dialog-scrollable modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -441,23 +154,218 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
 
     <?php include_once("../../includes/include.admin.script.php"); ?>
     <script>
-        var livepreviewmodal = document.getElementById('livepreviewmodal');
-
-        livepreviewmodal.addEventListener('show.bs.modal', function(event) {
-            // Button that triggered the modal
-            let button = event.relatedTarget;
-            // Extract info from data-bs-* attributes
-            let recipient = button.getAttribute('data-bs-whatever');
-
-            // Use above variables to manipulate the DOM
+        $(document).ready(() => {
+            LoadEverything().then(() => {
+                setTimeout(() => {
+                    $(".preloader").fadeOut();
+                }, 1000);
+            });
         });
-    </script>
 
+        // ON LOAD FUNCTIONS
 
+        async function LoadEverything() {
+            return await true;
+        }
 
-    <!-- Optional: Place to the bottom of scripts -->
-    <script>
-        const myModal = new bootstrap.Modal(document.getElementById('livepreviewmodal'), options)
+        // ====================================================================================
+
+        // HELPER FUNCTIONS
+        // ====================================================================================
+
+        // TRIGGERS
+
+        // <!-- Change Boolean Value --> //
+        $('.change-bool').unbind('click').click(function(e) {
+            const type = e.target.children[0].value;
+            Swal.fire({
+                title: 'Change Value?',
+                text: "This will change its current value. Proceed?",
+                icon: 'question',
+                showCancelButton: true,
+                showLoaderOnConfirm: true,
+                confirmButtonColor: '#435ebe',
+                confirmButtonText: 'Yes, proceed!',
+                allowOutsideClick: false,
+                preConfirm: (e) => {
+                    return $.ajax({
+                        url: "../../routes/contents.route.php",
+                        type: "POST",
+                        data: {
+                            action: "ChangeBooleanValue",
+                            type: type
+                        },
+                        beforeSend: function() {
+                            console.log('changing boolean value...')
+                        },
+                        success: function(response) {
+                            return response;
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    if (result.value == 'SUCCESS') {
+                        Swal.fire({
+                            icon: "success",
+                            text: `Successfuly Changed!`,
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error Changing Value.",
+                            text: result.value,
+                        })
+                    }
+                } else {
+                    Swal.fire({
+                        icon: "info",
+                        text: "You've Cancelled Change.",
+                    })
+                }
+            });
+        });
+
+        // <!-- Navigation Bar Title --> //
+        $('#edit-navigationbartitle').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatenavigationbartitleform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatenavigationbartitleform').parsley().reset();
+                    $('#updatenavigationbartitleform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-navigationbartitle';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Banner Text Title --> //
+        $('#edit-bannertexttitle').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatebannertexttitleform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatebannertexttitleform').parsley().reset();
+                    $('#updatebannertexttitleform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-bannertexttitle';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Banner Text Title Highlighted Text --> //
+        $('#edit-bannertexttitlehighlightedtext').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatebannertexttitlehighlightedtextform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatebannertexttitlehighlightedtextform').parsley().reset();
+                    $('#updatebannertexttitlehighlightedtextform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-bannertexttitlehighlightedtext';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Banner Text Contents & Highlighted Text --> //
+        $('#edit-bannertextcontentsandhighlightedtexts').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatebannertextcontentsandhighlightedtextsform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatebannertextcontentsandhighlightedtextsform').parsley().reset();
+                    $('#updatebannertextcontentsandhighlightedtextsform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-bannertextcontentsandhighlightedtexts';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Banner Button --> //
+        $('#edit-bannerbutton').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatebannerbuttonform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatebannerbuttonform').parsley().reset();
+                    $('#updatebannerbuttonform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-bannerbutton';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Banner Image --> //
+        $('#edit-bannerimage').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatebannerimageform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatebannerimageform').parsley().reset();
+                    $('#updatebannerimageform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-bannerimage';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Product Subtitle --> //
+        $('#edit-productsubtitle').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updateproductsubtitleform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updateproductsubtitleform').parsley().reset();
+                    $('#updateproductsubtitleform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-productsubtitle';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // ====================================================================================
+
+        // SUBMIT
+        // ====================================================================================
     </script>
 </body>
 

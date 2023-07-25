@@ -454,6 +454,23 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
     
     <?php include_once("../../includes/include.admin.script.php"); ?>
     <script src="../assets/js/pages/dashboards/dashboard1.js"></script>
+    <script>
+        $(document).ready(() => {
+            LoadEverything().then(() => {
+                setTimeout(() => {
+                    $(".preloader").fadeOut();
+                }, 1000);
+            });
+        });
+
+        // ON LOAD FUNCTIONS
+
+        async function LoadEverything() {
+            return await true;
+        }
+
+        // ====================================================================================
+    </script>
 </body>
 
 </html>

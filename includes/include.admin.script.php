@@ -17,3 +17,6 @@
 <script src="../assets/libs/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
 <script src="../assets/js/logout.js"></script>
 <script src="../assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+<script src="../assets/libs/parsleyjs/parsley.min.js"></script>
+<script src="../assets/libs/js/pages/parsley.js"></script>

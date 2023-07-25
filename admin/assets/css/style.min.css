@@ -12689,6 +12689,10 @@ html body .waves-notransition {
     color: #777e89
 }
 
+div.button, div.button * {
+    cursor: pointer !important;
+}
+
 @media (min-width:768px) {
     .bc-content {
         justify-content: flex-end

@@ -11,7 +11,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
 
 <head>
     <?php include_once("../../includes/include.admin.head.php"); ?>
-    
+
     <!-- Product CSS -->
     <link href="../assets/css/products.css" rel="stylesheet">
     <style>
@@ -87,7 +87,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                                 <div class="card">
                                     <div class="card-body d-flex justify-content-center">
                                         <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal" data-bs-target="#livepreviewmodal">Live Preview</button>
-                                        <button type="button" class="btn btn-secondary m-1" title="Reload"><i class="mdi mdi-reload"></i></button>
+                                        <button type="button" class="btn btn-secondary m-1" title="Reload" onclick="window.location.reload(true)"><i class="mdi mdi-reload"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -357,6 +357,209 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     $('#updateproductsubtitleform').parsley().reset();
                     $('#updateproductsubtitleform *').find(':input').prop('disabled', true);
                     update.type = 'button', update.textContent = 'Update', update.id = 'edit-productsubtitle';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Change Product Featured --> //
+        $('.change-featured').unbind('click').click(function(e) {
+            const id = e.target.parentElement.children[0].value;
+            Swal.fire({
+                title: 'Set As Featured?',
+                text: "This will set this product as featured. Proceed?",
+                icon: 'question',
+                showCancelButton: true,
+                showLoaderOnConfirm: true,
+                confirmButtonColor: '#435ebe',
+                confirmButtonText: 'Yes, proceed!',
+                allowOutsideClick: false,
+                preConfirm: (e) => {
+                    return $.ajax({
+                        url: "../../routes/products.route.php",
+                        type: "POST",
+                        data: {
+                            action: "SetAsFeatured",
+                            id: id
+                        },
+                        beforeSend: function() {
+                            console.log('setting product as featured...')
+                        },
+                        success: function(response) {
+                            return response;
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    if (result.value == 'SUCCESS') {
+                        Swal.fire({
+                            icon: "success",
+                            text: `Successfuly Changed!`,
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error Setting Featured.",
+                            text: result.value,
+                        })
+                    }
+                } else {
+                    Swal.fire({
+                        icon: "info",
+                        text: "You've Cancelled Change.",
+                    })
+                }
+            });
+        });
+
+        // <!-- Change Product Featured --> //
+        $('.remove-featured').unbind('click').click(function(e) {
+            const id = e.target.parentElement.children[0].value;
+            Swal.fire({
+                title: 'Remove As Featured?',
+                text: "This will remove this product as featured. Proceed?",
+                icon: 'question',
+                showCancelButton: true,
+                showLoaderOnConfirm: true,
+                confirmButtonColor: '#435ebe',
+                confirmButtonText: 'Yes, proceed!',
+                allowOutsideClick: false,
+                preConfirm: (e) => {
+                    return $.ajax({
+                        url: "../../routes/products.route.php",
+                        type: "POST",
+                        data: {
+                            action: "RemoveAsFeatured",
+                            id: id
+                        },
+                        beforeSend: function() {
+                            console.log('removing product as featured...')
+                        },
+                        success: function(response) {
+                            return response;
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    if (result.value == 'SUCCESS') {
+                        Swal.fire({
+                            icon: "success",
+                            text: `Successfuly Removed!`,
+                        });
+                    } else {
+                        Swal.fire({
+                            icon: "error",
+                            title: "Error Removing Featured.",
+                            text: result.value,
+                        })
+                    }
+                } else {
+                    Swal.fire({
+                        icon: "info",
+                        text: "You've Cancelled Change.",
+                    })
+                }
+            });
+        });
+
+        // <!-- About Us Subtitle --> //
+        $('#edit-aboutussubtitle').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updateaboutussubtitleform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updateaboutussubtitleform').parsley().reset();
+                    $('#updateaboutussubtitleform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-aboutussubtitle';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- About Us Left Image --> //
+        $('#edit-aboutusleftimage').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updateaboutusleftimageform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updateaboutusleftimageform').parsley().reset();
+                    $('#updateaboutusleftimageform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-aboutusleftimage';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Contact Us Title --> //
+        $('#edit-contactustitleandhighlightedtexts').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatecontactustitleandhighlightedtextsform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatecontactustitleandhighlightedtextsform').parsley().reset();
+                    $('#updatecontactustitleandhighlightedtextsform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-contactustitleandhighlightedtexts';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- Contact Us Text Contents --> //
+        $('#edit-contactustextcontents').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatecontactustextcontentsform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatecontactustextcontentsform').parsley().reset();
+                    $('#updatecontactustextcontentsform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-contactustextcontents';
+                    $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
+                });
+            }
+        });
+
+        // <!-- About Us Left Image --> //
+        $('#edit-footerimage').unbind('click').click(function(e) {
+            const update = e.target;
+            const cancel = e.target.parentNode.children[1];
+            if ($('#updatefooterimageform *').find(':input').prop('disabled', false)) {
+                setTimeout(() => {
+                    update.type = 'submit', update.textContent = 'Submit', update.id = 'update-item';
+                }, 10);
+                $(cancel).removeAttr('data-bs-dismiss'), cancel.textContent = 'Cancel', cancel.id = 'cancel-update';
+
+                $(cancel).click(function(e) {
+                    $('#updatefooterimageform').parsley().reset();
+                    $('#updatefooterimageform *').find(':input').prop('disabled', true);
+                    update.type = 'button', update.textContent = 'Update', update.id = 'edit-footerimage';
                     $(cancel).attr('data-bs-dismiss', 'modal').removeAttr('id'), cancel.textContent = 'Close';
                 });
             }

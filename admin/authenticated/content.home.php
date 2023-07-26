@@ -13,13 +13,13 @@
                                 <div class="row">
                                     <div class="col-md d-flex justify-content-between align-items-center">
                                         Welcome to ASKI Micro Insurance
-                                        <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertexttitlemodal"><i class="mdi mdi-pen"></i></button>
+                                        <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertexttitlemodal"><i class="mdi mdi-pen"></i></button>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md d-flex justify-content-between align-items-center">
                                         Highlighted Text
-                                        <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertexttitlehighlightedtextmodal"><i class="mdi mdi-pen"></i></button>
+                                        <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertexttitlehighlightedtextmodal"><i class="mdi mdi-pen"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-md d-flex justify-content-between align-items-center">
                                         Two (2) Highlighted Texts
-                                        <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertextcontentsandhighlightedtextsmodal"><i class="mdi mdi-pen"></i></button>
+                                        <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertextcontentsandhighlightedtextsmodal"><i class="mdi mdi-pen"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                 <div class="row">
                                     <div class="col-md d-flex justify-content-between align-items-center">
                                         #about
-                                        <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannerbuttonmodal"><i class="mdi mdi-pen"></i></button>
+                                        <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannerbuttonmodal"><i class="mdi mdi-pen"></i></button>
                                     </div>
                                 </div>
                             </div>

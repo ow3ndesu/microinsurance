@@ -15,6 +15,7 @@
 		<nav class="sidebar-nav">
 			<ul id="sidebarnav">
 				<li class="sidebar-item <?php (($end == 'dashboard') ? print('selected') : null); ?>"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+				<li class="sidebar-item <?php (($end == 'applications') ? print('selected') : null); ?>"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="applications" aria-expanded="false"><i class="mdi mdi-application"></i><span class="hide-menu">Applications</span></a></li>
 				<li class="sidebar-item <?php (($end == 'products') ? print('selected') : null); ?>"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products" aria-expanded="false"><i class="mdi mdi-security"></i><span class="hide-menu">Products</span></a></li>
 				<li class="sidebar-item <?php (($end == 'contents') ? print('selected') : null); ?>"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="contents" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu">Contents</span></a></li>
 				<li class="sidebar-item <?php (($end == 'profile') ? print('selected') : null); ?>"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile" aria-expanded="false"><i class="mdi mdi-account-network"></i><span class="hide-menu">Profile</span></a></li>

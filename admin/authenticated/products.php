@@ -71,6 +71,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     <div class="d-flex justify-content-end">
                         <div class="buttons">
                             <a href="#add" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-product">Add Product</a>
+                            <button type="button" class="btn btn-secondary m-1" title="Reload" onclick="window.location.reload(true)"><i class="mdi mdi-reload"></i></button>
                         </div>
                     </div>
                     <div class="row product">

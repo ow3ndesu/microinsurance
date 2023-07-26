@@ -11,7 +11,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 ASKI MI
-                                <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#navigationbartitlemodal"><i class="mdi mdi-pen"></i></button>
+                                <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#navigationbartitlemodal"><i class="mdi mdi-pen"></i></button>
                             </div>
                         </div>
                     </div>

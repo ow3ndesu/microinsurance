@@ -11,7 +11,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 Look for what is ideal to you here!
-                                <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#productsubtitlemodal"><i class="mdi mdi-pen"></i></button>
+                                <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#productsubtitlemodal"><i class="mdi mdi-pen"></i></button>
                             </div>
                         </div>
                     </div>
@@ -22,7 +22,7 @@
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center">
                                 Product and Product Details
-                                <button type="button" class="btn btn-secondary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#productsmodal"><i class="mdi mdi-pen"></i></button>
+                                <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#productsmodal"><i class="mdi mdi-pen"></i></button>
                             </div>
                         </div>
                     </div>
@@ -87,8 +87,9 @@
                                                 <h5 class="text-center">Apple Watch Series 3</h5>
                                                 <p class="text-center">Sample Product Details</p>
                                                 <p class="text-center">
+                                                    <input type="hidden" name="id" value="product1">
                                                     <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set">
+                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>
                                             </div>
                                         </div>
@@ -102,8 +103,9 @@
                                                 <h5 class="text-center">Beat Solo3 Wearless</h5>
                                                 <p class="text-center">Sample Product Details</p>
                                                 <p class="text-center">
+                                                    <input type="hidden" name="id" value="product2">
                                                     <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set">
+                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>
                                             </div>
                                         </div>
@@ -117,8 +119,9 @@
                                                 <h5 class="text-center">Apple MacBook</h5>
                                                 <p class="text-center">Sample Product Details</p>
                                                 <p class="text-center">
+                                                    <input type="hidden" name="id" value="product3">
                                                     <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set">
+                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>
                                             </div>
                                         </div>
@@ -134,8 +137,9 @@
                                                 <h5 class="text-center">Apple imac</h5>
                                                 <p class="text-center">Sample Product Details</p>
                                                 <p class="text-center">
+                                                    <input type="hidden" name="id" value="product4">
                                                     <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set">
+                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>
                                             </div>
                                         </div>
@@ -149,8 +153,9 @@
                                                 <h5 class="text-center">Apple ipad Air</h5>
                                                 <p class="text-center">Sample Product Details</p>
                                                 <p class="text-center">
+                                                    <input type="hidden" name="id" value="product5">
                                                     <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set">
+                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>
                                             </div>
                                         </div>
@@ -164,8 +169,9 @@
                                                 <h5 class="text-center">Apple iphone X</h5>
                                                 <p class="text-center">Sample Product Details</p>
                                                 <p class="text-center">
+                                                    <input type="hidden" name="id" value="product6">
                                                     <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set">
+                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>
                                             </div>
                                         </div>

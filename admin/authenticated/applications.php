@@ -106,7 +106,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
             LoadEverything().then(() => {
                 setTimeout(() => {
                     $(".preloader").fadeOut();
-                }, 1000);
+                }, 2000);
             });
         });
 

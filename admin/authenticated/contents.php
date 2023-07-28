@@ -155,17 +155,50 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
     <?php include_once("../../includes/include.admin.script.php"); ?>
     <script>
         $(document).ready(() => {
+            console.log('loading contents...');
             LoadEverything().then(() => {
                 setTimeout(() => {
                     $(".preloader").fadeOut();
-                }, 1000);
+                }, 2000);
             });
         });
 
         // ON LOAD FUNCTIONS
 
         async function LoadEverything() {
-            return await true;
+            LoadNavigationBar();
+        }
+
+        // <!-- Navigation Bar --> //
+        async function LoadNavigationBar() {
+            await $.ajax({
+                url: "../../routes/contents.route.php",
+                type: "POST",
+                data: {
+                    action: "LoadNavigationBar"
+                },
+                dataType: "JSON",
+                beforeSend: function() {
+                    console.log('loading navigation bar...');
+                },
+                success: function(response) {
+                    const title = response.TITLE;
+                    const isProductsInNavigationBar = (response.ISPRODUCTSINNAVTIGATION) ? '<label class="badge bg-success">Showing</label>' : '<label class="badge bg-danger">Not showing</label>';
+                    const isProductsInFeatured = (response.ISPRODUCTSINFEATURED) ? '<label class="badge bg-success">Showing</label>' : '<label class="badge bg-danger">Not showing</label>';
+
+                    $('#navigationbartitle').text(title);
+                    $('#viewnavigationbartitlecontent').val(title);
+
+                    $('.change-bool').find(':input[value="isProductsInNavigationBar"]').siblings().last().remove()
+                    $('.change-bool').find(':input[value="isProductsInNavigationBar"]').after(isProductsInNavigationBar);
+
+                    $('.change-bool').find(':input[value="isProductsInFeatured"]').siblings().last().remove()
+                    $('.change-bool').find(':input[value="isProductsInFeatured"]').after(isProductsInFeatured);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
         }
 
         // ====================================================================================
@@ -212,6 +245,8 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                         Swal.fire({
                             icon: "success",
                             text: `Successfuly Changed!`,
+                        }).then(() => {
+                            window.location.reload(true)
                         });
                     } else {
                         Swal.fire({

@@ -10,7 +10,7 @@
                                 Navigation Bar Title
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center">
-                                ASKI MI
+                                <span id="navigationbartitle"> ... </span>
                                 <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#navigationbartitlemodal"><i class="mdi mdi-pen"></i></button>
                             </div>
                         </div>

@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md d-flex justify-content-between align-items-center">
-                                        Welcome to ASKI Micro Insurance
+                                        <span id="homebannertitle"> ... </span>
                                         <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannertexttitlemodal"><i class="mdi mdi-pen"></i></button>
                                     </div>
                                 </div>
@@ -33,7 +33,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md">
-                                        At ASKI MI, we offer a comprehensive selection of insurance products designed to provide you with the security you need. Explore our diverse range of offerings and select the perfect insurance solution that suits your requirements. We sincerely look forward to having you join our valued clientele!
+                                        <span id="homebannertextcontents"> ... </span>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -173,7 +173,7 @@
                             <div class="row">
                                 <div class="col-md">
                                     <div class="form-floating">
-                                        <select name="viewbannerhighlightedcontents" id="viewbannerhighlightedcontents" class="form-control m-1" data-parsley-required="true" disabled required>
+                                        <select name="viewbannerhighlightedcontents" id="viewbannerhighlightedcontents" class="form-control m-1" data-parsley-required="true" data-placeholder="Highlighted Contents" multiple disabled required>
                                             <option value=""></option>
                                         </select>
                                         <label for="viewbannerhighlightedcontents">Highlighted Contents</label>

@@ -11,6 +11,8 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
 
 <head>
     <?php include_once("../../includes/include.admin.head.php"); ?>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
 
     <!-- Product CSS -->
     <link href="../assets/css/products.css" rel="stylesheet">
@@ -153,6 +155,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
     <!-- ============================================================== -->
 
     <?php include_once("../../includes/include.admin.script.php"); ?>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(() => {
             console.log('loading contents...');
@@ -167,6 +170,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
 
         async function LoadEverything() {
             LoadNavigationBar();
+            LoadHome();
         }
 
         // <!-- Navigation Bar --> //
@@ -194,6 +198,57 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
 
                     $('.change-bool').find(':input[value="isProductsInFeatured"]').siblings().last().remove()
                     $('.change-bool').find(':input[value="isProductsInFeatured"]').after(isProductsInFeatured);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        // <!-- Navigation Bar --> //
+        async function LoadHome() {
+            await $.ajax({
+                url: "../../routes/contents.route.php",
+                type: "POST",
+                data: {
+                    action: "LoadHome"
+                },
+                dataType: "JSON",
+                beforeSend: function() {
+                    console.log('loading home...');
+                },
+                success: function(response) {
+                    const title = response.TITLE;
+                    const titleselect = response.TITLESELECT;
+                    const titlehighlightedtext = response.TITLEHIGHLIGHTEDTEXT;
+                    const text = response.TEXT;
+                    const textselect = response.TEXTSELECT;
+                    const texthighlightedtext = response.TEXTHIGHLIGHTEDTEXT;
+
+                    $('#homebannertitle').text(title);
+                    $('#viewbannertexttitlecontent').val(title);
+
+                    $('#viewbannertexttitlehighlightedtextcontent').empty();
+                    titleselect.forEach(element => {
+                        $('#viewbannertexttitlehighlightedtextcontent').append(`<option value="${ element }">${ element }</option>`);
+                    });
+                    $('#viewbannertexttitlehighlightedtextcontent').val(titlehighlightedtext);
+
+                    $('#homebannertextcontents').text(text);
+                    $('#viewbannertextcontentscontent').val(text);
+
+                    $('#viewbannerhighlightedcontents').empty();
+                    textselect.forEach(element => {
+                        $('#viewbannerhighlightedcontents').append(`<option value="${ element }">${ element }</option>`);
+                    });
+                    $('#viewbannerhighlightedcontents').val(texthighlightedtext);
+
+                    $('#viewbannerhighlightedcontents').select2({
+                        theme: "bootstrap-5",
+                        width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
+                        placeholder: $(this).data('placeholder'),
+                        closeOnSelect: false,
+                    });
                 },
                 error: function(err) {
                     console.log(err);
@@ -603,6 +658,74 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
         // ====================================================================================
 
         // SUBMIT
+
+        // <!-- Navigation Bar Title --> //
+        $('#updatenavigationbartitleform').unbind('submit').submit(function() {
+
+            let formdata = new FormData();
+
+            if ($('#updatenavigationbartitleform').parsley().isValid()) {
+
+                formdata.append('action', 'UpdateNavigationBarTitle');
+                $('#updatenavigationbartitleform *').find(':input:not(:button)').each((index, element) => {
+                    formdata.append((element.id).slice(4), element.value);
+                });
+
+                Swal.fire({
+                    title: 'Proceed Submission?',
+                    text: `This action will update Navigation Bar Title. Proceed?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#435ebe',
+                    confirmButtonText: 'Yes, proceed!',
+                    focusConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: (e) => {
+                        return $.ajax({
+                            url: "../../routes/contents.route.php",
+                            type: "POST",
+                            data: formdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            beforeSend: function() {
+                                console.log(`updating pending navigation bar title...`)
+                            },
+                            success: function(response) {
+                                return response;
+                            },
+                            error: function(err) {
+                                console.log(err);
+                            }
+                        });
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (result.value == 'SUCCESS') {
+                            Swal.fire({
+                                icon: "success",
+                                text: `Navigation Bar Title Successfuly Updated!`,
+                            }).then(() => {
+                                window.location.reload(true)
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error Updating Navigation Bar Title.",
+                                text: result.value,
+                            })
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            text: "You've Cancelled Update.",
+                        })
+                    }
+                });
+            }
+        });
+
         // ====================================================================================
     </script>
 </body>

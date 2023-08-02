@@ -94,6 +94,54 @@ class Content extends Database {
         ));
     }
 
+    public function LoadHome() {
+        
+        $content = [];
+        $contentsloaded = "CONTENTS_LOADED";
+
+        $query = "SELECT type, value FROM tbl_contents WHERE division = 'HOME';";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+
+        if ($result->num_rows <= 0) {
+            echo 'NO_DATA';
+            return;
+        }
+
+        while($row = $result->fetch_assoc()) {
+            $content[] = $row;
+        }    
+
+        echo json_encode(array(
+            "MESSAGE" => $contentsloaded,
+            "TITLESELECT" => explode(' ', $content[0]['value']),
+            "TEXTSELECT" => explode(' ', str_replace(',', '', $content[2]['value'])),
+            $content[0]['type'] => $content[0]['value'],
+            $content[1]['type'] => $content[1]['value'],
+            $content[2]['type'] => $content[2]['value'],
+            $content[3]['type'] => explode(', ', $content[3]['value']),
+            $content[4]['type'] => $content[4]['value'],
+            $content[5]['type'] => $content[5]['value'],
+            $content[6]['type'] => $content[6]['value'],
+        ));
+    }
+
+    public function UpdateNavigationBarTitle($data) {
+        $navigationbartitlecontent = $data["navigationbartitlecontent"];
+        $sql = "UPDATE tbl_contents SET value = '$navigationbartitlecontent' WHERE type = 'TITLE' AND division = 'NAVIGATION';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+        } else {
+            $stmt->close();
+            echo 'SUCCESS';
+        }
+    }
+
     public function ChangeBooleanValue($data) {
         $type = $data["type"];
         $sql = '';

@@ -20,8 +20,14 @@ if(isset($_POST["action"]) && $_POST["action"] == "LoadNavigationBar"){
     $process->LoadNavigationBar();
 }
 
+if(isset($_POST["action"]) && $_POST["action"] == "LoadHome"){
+    $process->LoadHome();
+}
 
 
+if(isset($_POST["action"]) && $_POST["action"] == "UpdateNavigationBarTitle"){
+    $process->UpdateNavigationBarTitle($_POST);
+}
 
 if(isset($_POST["action"]) && $_POST["action"] == "ChangeBooleanValue"){
     $process->ChangeBooleanValue($_POST);

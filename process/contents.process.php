@@ -142,6 +142,114 @@ class Content extends Database {
         }
     }
 
+    public function UpdateHomeBannerTitle($data) {
+        $bannertexttitlecontent = $data["bannertexttitlecontent"];
+        $sql = "UPDATE tbl_contents SET value = '$bannertexttitlecontent' WHERE type = 'TITLE' AND division = 'HOME';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+        } else {
+            $stmt->close();
+            echo 'SUCCESS';
+        }
+    }
+
+    public function UpdateHomeBannerTitleHighlightedText($data) {
+        $bannertexttitlehighlightedtextcontent = $data["bannertexttitlehighlightedtextcontent"];
+        $sql = "UPDATE tbl_contents SET value = '$bannertexttitlehighlightedtextcontent' WHERE type = 'TITLEHIGHLIGHTEDTEXT' AND division = 'HOME';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+        } else {
+            $stmt->close();
+            echo 'SUCCESS';
+        }
+    }
+
+    public function UpdateHomeBannerTextContentsHighlightedText($data) {
+        $bannertextcontentscontent = $data["bannertextcontentscontent"];
+        $sql = "UPDATE tbl_contents SET value = '$bannertextcontentscontent' WHERE type = 'TEXT' AND division = 'HOME';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+            return;
+        }
+
+        $stmt->close();
+
+        $bannerhighlightedcontents = $data["bannerhighlightedcontents"];
+        $sql = "UPDATE tbl_contents SET value = '$bannerhighlightedcontents' WHERE type = 'TEXTHIGHLIGHTEDTEXT' AND division = 'HOME';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+            return;
+        }
+
+        $stmt->close();
+        echo 'SUCCESS';
+    }
+
+    public function UpdateHomeBannerButton($data) {
+        $bannerbuttontitle = $data["bannerbuttontitle"];
+        $sql = "UPDATE tbl_contents SET value = '$bannerbuttontitle' WHERE type = 'BUTTON' AND division = 'HOME';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+            return;
+        }
+
+        $stmt->close();
+
+        $bannerbuttontarget = $data["bannerbuttontarget"];
+        $sql = "UPDATE tbl_contents SET value = '$bannerbuttontarget' WHERE type = 'BUTTONTARGET' AND division = 'HOME';";
+        $stmt = $this->conn->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt->close();
+            printf($stmt->error);
+            return;
+        }
+
+        $stmt->close();
+        echo 'SUCCESS';
+    }
+
+    public function UpdateHomeBannerImage($data) {
+        $bannerimage = $_FILES["bannerimage"];
+        $path = '../assets/images/';
+        $tmpname = $bannerimage["tmp_name"];
+        $filename = $bannerimage["name"];
+        $ext = pathinfo($filename, PATHINFO_EXTENSION);
+        $filename = "banner-bg.".$ext;
+
+        if (!move_uploaded_file($tmpname, $path.$filename)) {
+            echo 'Error In Uploading Image';
+            return;
+        }
+
+        // $sql = "UPDATE tbl_contents SET value = '$filename' WHERE type = 'IMAGE' AND division = 'HOME';";
+        // $stmt = $this->conn->prepare($sql);
+
+        // if (!$stmt->execute()) {
+        //     $stmt->close();
+        //     printf($stmt->error);
+        //     return;
+        // }
+
+        // $stmt->close();
+        echo 'SUCCESS';
+    }
+    
     public function ChangeBooleanValue($data) {
         $type = $data["type"];
         $sql = '';

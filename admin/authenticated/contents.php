@@ -205,7 +205,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
             });
         }
 
-        // <!-- Navigation Bar --> //
+        // <!-- Home Banner --> //
         async function LoadHome() {
             await $.ajax({
                 url: "../../routes/contents.route.php",
@@ -224,6 +224,8 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     const text = response.TEXT;
                     const textselect = response.TEXTSELECT;
                     const texthighlightedtext = response.TEXTHIGHLIGHTEDTEXT;
+                    const button = response.BUTTON;
+                    const target = response.BUTTONTARGET;
 
                     $('#homebannertitle').text(title);
                     $('#viewbannertexttitlecontent').val(title);
@@ -249,6 +251,11 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                         placeholder: $(this).data('placeholder'),
                         closeOnSelect: false,
                     });
+
+                    $('#homebannerbuttontitle').text(button);
+                    $('#viewbannerbuttontitle').val(button);
+                    $('#homebannerbuttontarget').text(target);
+                    $('#viewbannerbuttontarget').val(target);
                 },
                 error: function(err) {
                     console.log(err);
@@ -655,6 +662,16 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
             }
         });
 
+        // <!-- Banner Text Contents & Highlighted Text --> //
+        $("#viewbannertextcontentscontent").on('input', function() {
+            const textselect = (this.value).split(' ');
+
+            $('#viewbannerhighlightedcontents').empty();
+            textselect.forEach(element => {
+                $('#viewbannerhighlightedcontents').append(`<option value="${ element }">${ element }</option>`);
+            });
+        });
+
         // ====================================================================================
 
         // SUBMIT
@@ -724,6 +741,341 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     }
                 });
             }
+        });
+
+        // <!-- Banner Text Title --> //
+        $('#updatebannertexttitleform').unbind('submit').submit(function() {
+
+            let formdata = new FormData();
+
+            if ($('#updatebannertexttitleform').parsley().isValid()) {
+
+                formdata.append('action', 'UpdateHomeBannerTitle');
+                $('#updatebannertexttitleform *').find(':input:not(:button)').each((index, element) => {
+                    formdata.append((element.id).slice(4), element.value);
+                });
+
+                Swal.fire({
+                    title: 'Proceed Submission?',
+                    text: `This action will update Home Banner Title. Proceed?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#435ebe',
+                    confirmButtonText: 'Yes, proceed!',
+                    focusConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: (e) => {
+                        return $.ajax({
+                            url: "../../routes/contents.route.php",
+                            type: "POST",
+                            data: formdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            beforeSend: function() {
+                                console.log(`updating pending home banner title...`)
+                            },
+                            success: function(response) {
+                                return response;
+                            },
+                            error: function(err) {
+                                console.log(err);
+                            }
+                        });
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (result.value == 'SUCCESS') {
+                            Swal.fire({
+                                icon: "success",
+                                text: `Home Banner Title Successfuly Updated!`,
+                            }).then(() => {
+                                window.location.reload(true)
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error Updating Home Banner Title.",
+                                text: result.value,
+                            })
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            text: "You've Cancelled Update.",
+                        })
+                    }
+                });
+            }
+        });
+
+        // <!-- Banner Text Title Highlighted Text --> //
+        $('#updatebannertexttitlehighlightedtextform').unbind('submit').submit(function() {
+
+            let formdata = new FormData();
+
+            if ($('#updatebannertexttitlehighlightedtextform').parsley().isValid()) {
+
+                formdata.append('action', 'UpdateHomeBannerTitleHighlightedText');
+                $('#updatebannertexttitlehighlightedtextform *').find(':input:not(:button)').each((index, element) => {
+                    formdata.append((element.id).slice(4), element.value);
+                });
+
+                Swal.fire({
+                    title: 'Proceed Submission?',
+                    text: `This action will update Home Banner Title Highlighted Text. Proceed?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#435ebe',
+                    confirmButtonText: 'Yes, proceed!',
+                    focusConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: (e) => {
+                        return $.ajax({
+                            url: "../../routes/contents.route.php",
+                            type: "POST",
+                            data: formdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            beforeSend: function() {
+                                console.log(`updating pending home banner title highlighted text...`)
+                            },
+                            success: function(response) {
+                                return response;
+                            },
+                            error: function(err) {
+                                console.log(err);
+                            }
+                        });
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (result.value == 'SUCCESS') {
+                            Swal.fire({
+                                icon: "success",
+                                text: `Home Banner Title Highlighted Text Successfuly Updated!`,
+                            }).then(() => {
+                                window.location.reload(true)
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error Updating Home Banner Title Highlighted Text.",
+                                text: result.value,
+                            })
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            text: "You've Cancelled Update.",
+                        })
+                    }
+                });
+            }
+        });
+
+        // <!-- Banner Text Contents & Highlighted Text --> //
+        $('#updatebannertextcontentsandhighlightedtextsform').unbind('submit').submit(function() {
+
+            let formdata = new FormData();
+
+            if ($('#updatebannertextcontentsandhighlightedtextsform').parsley().isValid()) {
+
+                formdata.append('action', 'UpdateHomeBannerTextContentsHighlightedText');
+                $('#updatebannertextcontentsandhighlightedtextsform *').find(':input:not(:button)').each((index, element) => {
+                    formdata.append((element.id).slice(4), element.value);
+                });
+
+                formdata.set('bannerhighlightedcontents', ($('#viewbannerhighlightedcontents').val()).join(', '));
+
+                Swal.fire({
+                    title: 'Proceed Submission?',
+                    text: `This action will update Home Banner Text Contents & Highlighted Text. Proceed?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#435ebe',
+                    confirmButtonText: 'Yes, proceed!',
+                    focusConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: (e) => {
+                        return $.ajax({
+                            url: "../../routes/contents.route.php",
+                            type: "POST",
+                            data: formdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            beforeSend: function() {
+                                console.log(`updating pending home banner text & highlighted text...`)
+                            },
+                            success: function(response) {
+                                return response;
+                            },
+                            error: function(err) {
+                                console.log(err);
+                            }
+                        });
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (result.value == 'SUCCESS') {
+                            Swal.fire({
+                                icon: "success",
+                                text: `Home Banner Text Contents & Highlighted Text Successfuly Updated!`,
+                            }).then(() => {
+                                window.location.reload(true)
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error Updating Home Banner Text Contents & Highlighted Text.",
+                                text: result.value,
+                            })
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            text: "You've Cancelled Update.",
+                        })
+                    }
+                });
+            }
+        });
+
+        // <!-- Banner Button --> //
+        $('#updatebannerbuttonform').unbind('submit').submit(function() {
+
+            let formdata = new FormData();
+
+            if ($('#updatebannerbuttonform').parsley().isValid()) {
+
+                formdata.append('action', 'UpdateHomeBannerButton');
+                $('#updatebannerbuttonform *').find(':input:not(:button)').each((index, element) => {
+                    formdata.append((element.id).slice(4), element.value);
+                });
+
+                Swal.fire({
+                    title: 'Proceed Submission?',
+                    text: `This action will update Home Banner Button. Proceed?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#435ebe',
+                    confirmButtonText: 'Yes, proceed!',
+                    focusConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: (e) => {
+                        return $.ajax({
+                            url: "../../routes/contents.route.php",
+                            type: "POST",
+                            data: formdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            beforeSend: function() {
+                                console.log(`updating pending home banner button...`)
+                            },
+                            success: function(response) {
+                                return response;
+                            },
+                            error: function(err) {
+                                console.log(err);
+                            }
+                        });
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (result.value == 'SUCCESS') {
+                            Swal.fire({
+                                icon: "success",
+                                text: `Home Banner Button Successfuly Updated!`,
+                            }).then(() => {
+                                window.location.reload(true)
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error Updating Home Banner Button.",
+                                text: result.value,
+                            })
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            text: "You've Cancelled Update.",
+                        })
+                    }
+                });
+            }
+        });
+
+        $("#updatebannerimageform").unbind("submit").submit(function () {
+
+            let formdata = new FormData();
+            const viewbannerimage = $("#viewbannerimage")[0].files;
+
+            if ($('#updatebannerimageform').parsley().isValid()) {
+
+                formdata.append('action', 'UpdateHomeBannerImage');
+                formdata.append('bannerimage', viewbannerimage[0]);
+                Swal.fire({
+                    title: 'Proceed Submission?',
+                    text: `This action will update Home Banner Image. Proceed?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    showLoaderOnConfirm: true,
+                    confirmButtonColor: '#435ebe',
+                    confirmButtonText: 'Yes, proceed!',
+                    focusConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: (e) => {
+                        return $.ajax({
+                            url: "../../routes/contents.route.php",
+                            type: "POST",
+                            data: formdata,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            beforeSend: function() {
+                                console.log(`updating pending home banner image...`)
+                            },
+                            success: function(response) {
+                                return response;
+                            },
+                            error: function(err) {
+                                console.log(err);
+                            }
+                        });
+                    },
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (result.value == 'SUCCESS') {
+                            Swal.fire({
+                                icon: "success",
+                                text: `Home Banner Image Successfuly Updated!`,
+                            }).then(() => {
+                                window.location.reload(true)
+                            });
+                        } else {
+                            Swal.fire({
+                                icon: "error",
+                                title: "Error Updating Home Banner Image.",
+                                text: result.value,
+                            })
+                        }
+                    } else {
+                        Swal.fire({
+                            icon: "info",
+                            text: "You've Cancelled Update.",
+                        })
+                    }
+                });
+            }
+            
         });
 
         // ====================================================================================

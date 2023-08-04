@@ -53,12 +53,12 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md">
-                                        KNOW US BETTER
+                                        <span id="homebannerbuttontitle"> ... </span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md d-flex justify-content-between align-items-center">
-                                        #about
+                                        <span id="homebannerbuttontarget"> ... </span>
                                         <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#bannerbuttonmodal"><i class="mdi mdi-pen"></i></button>
                                     </div>
                                 </div>
@@ -176,7 +176,7 @@
                                         <select name="viewbannerhighlightedcontents" id="viewbannerhighlightedcontents" class="form-control m-1" data-parsley-required="true" data-placeholder="Highlighted Contents" multiple disabled required>
                                             <option value=""></option>
                                         </select>
-                                        <label for="viewbannerhighlightedcontents">Highlighted Contents</label>
+                                        <!-- <label for="viewbannerhighlightedcontents">Highlighted Contents</label> -->
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +216,10 @@
                                 <div class="col-md">
                                     <div class="form-floating">
                                         <select name="viewbannerbuttontarget" id="viewbannerbuttontarget" class="form-control m-1" data-parsley-required="true" disabled required>
-                                            <option value=""></option>
+                                            <option value="#products">#products</option>
+                                            <option value="#testimonials">#testimonials</option>
+                                            <option value="#about">#about</option>
+                                            <option value="#contact-us">#contact-us</option>
                                         </select>
                                         <label for="viewbannerbuttontarget">Button Target</label>
                                     </div>
@@ -248,7 +251,7 @@
                         <div class="container-fluid requiredfields" id="requiredfields">
                             <div class="row">
                                 <div class="col-md">
-                                    <input type="file" name="viewbannerimagetitle" id="viewbannerimagetitle" placeholder="Banner Image" class="form-control m-1" accept="image/png, image/jpeg" data-parsley-required="true" disabled required>
+                                    <input type="file" name="viewbannerimage" id="viewbannerimage" placeholder="Banner Image" class="form-control m-1" accept="image/png" data-parsley-required="true" disabled required>
                                 </div>
                             </div>
                         </div>

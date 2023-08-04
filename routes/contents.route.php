@@ -29,6 +29,26 @@ if(isset($_POST["action"]) && $_POST["action"] == "UpdateNavigationBarTitle"){
     $process->UpdateNavigationBarTitle($_POST);
 }
 
+if(isset($_POST["action"]) && $_POST["action"] == "UpdateHomeBannerTitle"){
+    $process->UpdateHomeBannerTitle($_POST);
+}
+
+if(isset($_POST["action"]) && $_POST["action"] == "UpdateHomeBannerTitleHighlightedText"){
+    $process->UpdateHomeBannerTitleHighlightedText($_POST);
+}
+
+if(isset($_POST["action"]) && $_POST["action"] == "UpdateHomeBannerTextContentsHighlightedText"){
+    $process->UpdateHomeBannerTextContentsHighlightedText($_POST);
+}
+
+if(isset($_POST["action"]) && $_POST["action"] == "UpdateHomeBannerButton"){
+    $process->UpdateHomeBannerButton($_POST);
+}
+
+if(isset($_POST["action"]) && $_POST["action"] == "UpdateHomeBannerImage"){
+    $process->UpdateHomeBannerImage($_POST);
+}
+
 if(isset($_POST["action"]) && $_POST["action"] == "ChangeBooleanValue"){
     $process->ChangeBooleanValue($_POST);
 }

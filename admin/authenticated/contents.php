@@ -21,6 +21,19 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
             display: none !important;
             width: 0 !important
         }
+
+        #topbtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 4px;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -43,6 +56,8 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
         <?php include_once("../../includes/include.admin.header.php"); ?>
 
         <?php include_once("../../includes/include.admin.sidebar.php"); ?>
+
+        <button type="button" id="topbtn" class="btn btn-danger m-1" title="Go To Top" onclick="window.location.href='#top'"><i class="mdi mdi-arrow-up"></i></button>
 
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
@@ -164,6 +179,10 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     $(".preloader").fadeOut();
                 }, 2000);
             });
+
+            window.onscroll = function() {
+                scrollFunction();
+            };
         });
 
         // ON LOAD FUNCTIONS
@@ -171,6 +190,13 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
         async function LoadEverything() {
             LoadNavigationBar();
             LoadHome();
+            LoadProducts();
+        }
+
+        // <!-- Go To Top --> //
+        function scrollFunction() {
+            const mybutton = document.getElementById("topbtn");
+            (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? mybutton.style.display = "block" :  mybutton.style.display = "none";
         }
 
         // <!-- Navigation Bar --> //
@@ -256,6 +282,30 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     $('#viewbannerbuttontitle').val(button);
                     $('#homebannerbuttontarget').text(target);
                     $('#viewbannerbuttontarget').val(target);
+                },
+                error: function(err) {
+                    console.log(err);
+                }
+            });
+        }
+
+        // <!-- Products --> //
+        async function LoadProducts() {
+            await $.ajax({
+                url: "../../routes/contents.route.php",
+                type: "POST",
+                data: {
+                    action: "LoadProducts"
+                },
+                dataType: "JSON",
+                beforeSend: function() {
+                    console.log('loading products...');
+                },
+                success: function(response) {
+                    const subtitle = response.FEATUREDSUBTITLE;
+
+                    $('#productsubtitletitle').text(subtitle);
+                    $('#viewproductsubtitlecontent').val(subtitle);
                 },
                 error: function(err) {
                     console.log(err);
@@ -1013,7 +1063,8 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
             }
         });
 
-        $("#updatebannerimageform").unbind("submit").submit(function () {
+        // <!-- Banner Image --> //
+        $("#updatebannerimageform").unbind("submit").submit(function() {
 
             let formdata = new FormData();
             const viewbannerimage = $("#viewbannerimage")[0].files;
@@ -1075,7 +1126,7 @@ if (!isset($_SESSION['MGNSVN03M10Z174U'])) { # authenticated
                     }
                 });
             }
-            
+
         });
 
         // ====================================================================================

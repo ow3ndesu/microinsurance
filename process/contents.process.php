@@ -128,6 +128,32 @@ class Content extends Database {
         ));
     }
 
+    public function LoadProducts() {
+        
+        $content = [];
+        $contentsloaded = "CONTENTS_LOADED";
+
+        $query = "SELECT type, value FROM tbl_contents WHERE division = 'PRODUCTS';";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $stmt->close();
+
+        if ($result->num_rows <= 0) {
+            echo 'NO_DATA';
+            return;
+        }
+
+        while($row = $result->fetch_assoc()) {
+            $content[] = $row;
+        }    
+
+        echo json_encode(array(
+            "MESSAGE" => $contentsloaded,
+            $content[0]['type'] => $content[0]['value']
+        ));
+    }
+
     public function UpdateNavigationBarTitle($data) {
         $navigationbartitlecontent = $data["navigationbartitlecontent"];
         $sql = "UPDATE tbl_contents SET value = '$navigationbartitlecontent' WHERE type = 'TITLE' AND division = 'NAVIGATION';";

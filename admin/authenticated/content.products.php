@@ -10,7 +10,7 @@
                                 Featured Products Subtitle
                             </div>
                             <div class="card-body d-flex justify-content-between align-items-center">
-                                Look for what is ideal to you here!
+                                <span id="productsubtitletitle"> ... </span>
                                 <button type="button" class="btn btn-primary m-1" title="Edit" data-bs-toggle="modal" data-bs-target="#productsubtitlemodal"><i class="mdi mdi-pen"></i></button>
                             </div>
                         </div>

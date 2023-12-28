@@ -24,6 +24,10 @@ if(isset($_POST["action"]) && $_POST["action"] == "LoadHome"){
     $process->LoadHome();
 }
 
+if(isset($_POST["action"]) && $_POST["action"] == "LoadProducts"){
+    $process->LoadProducts();
+}
+
 
 if(isset($_POST["action"]) && $_POST["action"] == "UpdateNavigationBarTitle"){
     $process->UpdateNavigationBarTitle($_POST);

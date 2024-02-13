@@ -78,14 +78,14 @@
                         <div class="container-fluid requiredfields" id="requiredfields">
                             <div class="container">
                                 <div class="row product">
-                                    <div class="col-md-4 ">
+                                    <div class="col-md-3 ">
                                         <div class="card productcontainer">
                                             <div class="ccc">
-                                                <p class="text-center"><img src="https://raw.githubusercontent.com/rxhack/productImage/main/1.jpg" class="imw"></p>
+                                                <p class="text-center"><img src="../assets/images/products/benlife-shield.png" class="imw"></p>
                                             </div>
                                             <div class="card-body">
-                                                <h5 class="text-center">Apple Watch Series 3</h5>
-                                                <p class="text-center">Sample Product Details</p>
+                                                <h5 class="text-center">BENLIFE SHIELD</h5>
+                                                <p class="text-center">Single-Pay Micro Personal Accident</p>
                                                 <p class="text-center">
                                                     <input type="hidden" name="id" value="product1">
                                                     <input type="button" name="viewproduct" value="View" class="view">
@@ -94,14 +94,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="card productcontainer">
                                             <div class="ccc">
-                                                <p class="text-center"><img src="https://raw.githubusercontent.com/rxhack/productImage/main/2.jpg" class="imw"></p>
+                                                <p class="text-center"><img src="../assets/images/products/benlife-shield.png" class="imw"></p>
                                             </div>
                                             <div class="card-body">
-                                                <h5 class="text-center">Beat Solo3 Wearless</h5>
-                                                <p class="text-center">Sample Product Details</p>
+                                                <h5 class="text-center">B-SHIELD + KONSULTA MD</h5>
+                                                <p class="text-center">Single-Pay Micro Personal Accident</p>
                                                 <p class="text-center">
                                                     <input type="hidden" name="id" value="product2">
                                                     <input type="button" name="viewproduct" value="View" class="view">
@@ -110,14 +110,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-3">
                                         <div class="card productcontainer">
                                             <div class="ccc">
-                                                <p class="text-center"><img src="https://raw.githubusercontent.com/rxhack/productImage/main/3.jpg" class="imw"></p>
+                                                <p class="text-center"><img src="../assets/images/products/benlife-erx.png" class="imw"></p>
                                             </div>
                                             <div class="card-body">
-                                                <h5 class="text-center">Apple MacBook</h5>
-                                                <p class="text-center">Sample Product Details</p>
+                                                <h5 class="text-center">BENLIFE ERx</h5>
+                                                <p class="text-center">Emergency Room <br>Care</p>
                                                 <p class="text-center">
                                                     <input type="hidden" name="id" value="product3">
                                                     <input type="button" name="viewproduct" value="View" class="view">
@@ -126,50 +126,16 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row product">
-                                    <div class="col-md-4 ">
+                                    <div class="col-md-3 ">
                                         <div class="card productcontainer">
                                             <div class="ccc">
-                                                <p class="text-center"><img src="https://raw.githubusercontent.com/rxhack/productImage/main/4.jpg" class="imw"></p>
+                                                <p class="text-center"><img src="../assets/images/products/benlife-erx.png" class="imw"></p>
                                             </div>
                                             <div class="card-body">
-                                                <h5 class="text-center">Apple imac</h5>
-                                                <p class="text-center">Sample Product Details</p>
+                                                <h5 class="text-center">BENLIFE NET</h5>
+                                                <p class="text-center">Mosquito Borne Disease <br>Cover</p>
                                                 <p class="text-center">
                                                     <input type="hidden" name="id" value="product4">
-                                                    <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card productcontainer">
-                                            <div class="ccc">
-                                                <p class="text-center"><img src="https://raw.githubusercontent.com/rxhack/productImage/main/6.jpg" class="imw"></p>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="text-center">Apple ipad Air</h5>
-                                                <p class="text-center">Sample Product Details</p>
-                                                <p class="text-center">
-                                                    <input type="hidden" name="id" value="product5">
-                                                    <input type="button" name="viewproduct" value="View" class="view">
-                                                    <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="card productcontainer">
-                                            <div class="ccc">
-                                                <p class="text-center"><img src="https://raw.githubusercontent.com/rxhack/productImage/main/7.jpg" class="imw"></p>
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="text-center">Apple iphone X</h5>
-                                                <p class="text-center">Sample Product Details</p>
-                                                <p class="text-center">
-                                                    <input type="hidden" name="id" value="product6">
                                                     <input type="button" name="viewproduct" value="View" class="view">
                                                     <input type="button" name="setAsFeatured" value="Set As Featured" class="set change-featured">
                                                 </p>

@@ -118,12 +118,12 @@ body {
 }
 
 ::selection {
-  background: #f1556a;
+  background: #00398E;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #f1556a;
+  background: #00398E;
   color: #fff;
 }
 
@@ -147,7 +147,7 @@ a.main-button-slider {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #fba70b;
+  background-color: #4AB0EA;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -159,14 +159,14 @@ a.main-button-slider {
 }
 
 a.main-button-slider:hover {
-  background-color: #f1556a;
+  background-color: #00398E;
 }
 
 a.main-button {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #f4813f;
+  background-color: #0380C7;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -178,7 +178,7 @@ a.main-button {
 }
 
 a.main-button:hover {
-  background-color: #f1556a;
+  background-color: #00398E;
 }
 
 a.view-all-button {
@@ -196,7 +196,7 @@ a.view-all-button {
 }
 
 a.view-all-button:hover {
-  color: #f1556a;
+  color: #00398E;
 }
 
 button.main-button {
@@ -206,7 +206,7 @@ button.main-button {
   font-size: 14px;
   border-radius: 25px;
   padding: 15px 25px;
-  background-color: #f4813f;
+  background-color: #0380C7;
   text-transform: uppercase;
   color: #fff;
   font-weight: 600;
@@ -218,7 +218,7 @@ button.main-button {
 }
 
 button.main-button:hover {
-  background-color: #f1556a;
+  background-color: #00398E;
 }
 
 
@@ -237,7 +237,7 @@ button.main-button:hover {
 
 .center-heading h2 em {
   font-style: normal;
-  color: #f4813f;
+  color: #0380C7;
 }
 
 .center-heading p {
@@ -269,11 +269,11 @@ header
 }
 
 .background-header .main-nav .nav li:hover a {
-  color: #fba70b!important;
+  color: #4AB0EA!important;
 }
 
 .background-header .nav li a.active {
-  color: #fba70b!important;
+  color: #4AB0EA!important;
 }
 
 .header-area {
@@ -350,7 +350,7 @@ header
 }
 
 .header-area .main-nav .nav li:hover a {
-  color: #fba70b;
+  color: #4AB0EA;
 }
 
 .header-area .main-nav .nav li.submenu {
@@ -415,12 +415,12 @@ header
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
-  background: #fba70b;
+  background: #4AB0EA;
 }
 
 .header-area .main-nav .nav li.submenu ul li a:hover {
   background: #fff;
-  color: #fba70b!important;
+  color: #4AB0EA!important;
   padding-left: 25px;
 }
 
@@ -556,7 +556,7 @@ header
 }
 
 .header-area.header-sticky .nav li a.active {
-  color: #fba70b;
+  color: #4AB0EA;
 }
 
 @media (max-width: 1200px) {
@@ -624,7 +624,7 @@ header
   }
   .header-area .main-nav .nav li a:hover {
     background: #eee !important;
-    color: #fba70b!important;
+    color: #4AB0EA!important;
   }
   .header-area .main-nav .nav li.submenu ul {
     position: relative;
@@ -698,7 +698,7 @@ welcome
 
 .welcome-area .header-text h1 em {
   font-style: normal;
-  color: #fba70b;
+  color: #4AB0EA;
 }
 
 .welcome-area .header-text p {
@@ -899,7 +899,7 @@ testimonials
 
 #testimonials .item .testimonial-content {
   background: rgb(244,129,63);
-  background: linear-gradient(145deg, rgba(244,129,63,1) 0%, rgba(241,85,106,1) 100%);
+  background: linear-gradient(145deg, rgba(0,57,142,1) 0%, rgba(3,128,199,1) 100%);
   margin-left: 60px;
   padding: 40px 30px;
   text-align: center;
@@ -953,7 +953,7 @@ testimonials
   text-align: center;
   display: inline-block;
   background: rgb(244,129,63);
-  background: linear-gradient(145deg, rgba(244,129,63,1) 0%, rgba(241,85,106,1) 100%);
+  background: linear-gradient(145deg, rgba(0,57,142,1) 0%, rgba(3,128,199,1) 100%);
   position: absolute;
 }
 
@@ -970,7 +970,7 @@ testimonials
   text-align: center;
   display: inline-block;
   background: rgb(244,129,63);
-  background: linear-gradient(145deg, rgba(244,129,63,1) 0%, rgba(241,85,106,1) 100%);
+  background: linear-gradient(145deg, rgba(0,57,142,1) 0%, rgba(3,128,199,1) 100%);
   position: absolute;
 }
 
@@ -1085,7 +1085,7 @@ footer .right-content {
 
 .footer-content .right-content h2 em {
   font-style: normal;
-  color: #fba70b;
+  color: #4AB0EA;
 }
 
 .footer-content .right-content p {
@@ -1132,8 +1132,8 @@ footer .social li a {
 }
 
 footer .social li a:hover {
-  background-color: #fba70b;
-  border-color: #fba70b;
+  background-color: #4AB0EA;
+  border-color: #4AB0EA;
   color: #fff;
 }
 
@@ -1183,7 +1183,7 @@ preloader
 */
 #preloader {
   overflow: hidden;
-  background-image: linear-gradient(145deg, #f4813f 0%, #f1556a 100%);
+  background-image: linear-gradient(145deg, #0380C7 0%, #00398E 100%);
   left: 0;
   right: 0;
   top: 0;

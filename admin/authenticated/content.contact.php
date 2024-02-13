@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-md">
-                                        More About ASKI MI
+                                        More About ASKI MIU
                                     </div>
                                 </div>
                                 <div class="row">
